@@ -72,7 +72,7 @@ pkgsi686Linux.stdenv.mkDerivation (finalAttrs: {
           "luajit"
           "websocketpp"
           "json"
-          "libgit2"
+          # "libgit2"
           "minizip"
           "curl"
           "asio"
