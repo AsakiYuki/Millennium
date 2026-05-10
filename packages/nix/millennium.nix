@@ -70,6 +70,7 @@ stdenv.mkDerivation {
           "asio"
           "abseil"
           "re2"
+          "minhook"
         ];
       in
         lib.concatStrings (map (dep: "prepare_dep ${dep} \"${inputs."${dep}-src"}\"\n") deps)
