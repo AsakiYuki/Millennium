@@ -3,13 +3,15 @@
   stdenv,
   callPackage,
   fetchFromGitHub,
-
   inputs,
   millennium-shims,
   millennium-assets,
   millennium-frontend,
   millennium-32,
   millennium-64,
+  pkgsi686Linux,
+  millennium-python,
+  cacert,
 }:
 stdenv.mkDerivation {
   pname = "millennium";
@@ -70,7 +72,7 @@ stdenv.mkDerivation {
           "re2"
         ];
       in
-      lib.concatStrings (map (dep: "prepare_dep ${dep} \"${inputs."${dep}-src"}\"\n") deps)
+        lib.concatStrings (map (dep: "prepare_dep ${dep} \"${inputs."${dep}-src"}\"\n") deps)
     }
 
     echo "[Nix Millennium Build Setup] Initializing Git Repos and adding Dummy Commits"
