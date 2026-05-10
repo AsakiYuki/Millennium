@@ -4,10 +4,8 @@
   pkg-config,
   git,
   cacert,
-
   lib,
   pkgsi686Linux,
-
   inputs,
   millennium-python ? pkgsi686Linux.python311,
   millennium-shims,
@@ -69,7 +67,7 @@ pkgsi686Linux.stdenv.mkDerivation (finalAttrs: {
         deps = [
           "zlib"
           "luajit"
-          "minhook"
+          # "minhook"
           "mini"
           "websocketpp"
           "json"
@@ -79,7 +77,7 @@ pkgsi686Linux.stdenv.mkDerivation (finalAttrs: {
           "asio"
         ];
       in
-      lib.concatStrings (map (dep: "prepare_dep ${dep} \"${inputs."${dep}-src"}\"\n") deps)
+        lib.concatStrings (map (dep: "prepare_dep ${dep} \"${inputs."${dep}-src"}\"\n") deps)
     }
 
     echo "[Nix Millennium Build Setup] Initializing Git Repos and adding Dummy Commits"
