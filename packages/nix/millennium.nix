@@ -10,7 +10,7 @@
   millennium-32,
   millennium-64,
   pkgsi686Linux,
-  millennium-python,
+  millennium-python ? pkgsi686Linux.python311,
   cacert,
 }:
 stdenv.mkDerivation {
