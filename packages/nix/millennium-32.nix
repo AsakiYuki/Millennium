@@ -68,13 +68,16 @@ pkgsi686Linux.stdenv.mkDerivation (finalAttrs: {
           "zlib"
           "luajit"
           # "minhook"
-          "mini"
+          # "mini"
+          "luajit"
           "websocketpp"
           "json"
           "libgit2"
           "minizip"
           "curl"
           "asio"
+          "re2"
+          "abseil"
         ];
       in
         lib.concatStrings (map (dep: "prepare_dep ${dep} \"${inputs."${dep}-src"}\"\n") deps)
